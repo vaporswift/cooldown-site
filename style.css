@@ -1,0 +1,158 @@
+:root {
+  --bg: #141413;
+  --surface: #1e1d1b;
+  --text: #faf9f5;
+  --text-secondary: #b0aea5;
+  --coral: #d97757;
+  --blue: #6a9bcc;
+  --border: #2a2927;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+}
+
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+header.site {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.logo-mark {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: var(--bg);
+  border: 2px solid var(--coral);
+  position: relative;
+}
+
+.logo-mark::after {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  border: 3px solid var(--coral);
+  border-right-color: transparent;
+  border-top-color: transparent;
+}
+
+header.site .name {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+nav.site {
+  margin-left: auto;
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+}
+
+nav.site a {
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+
+nav.site a:hover, nav.site a.active {
+  color: var(--coral);
+}
+
+h1 {
+  font-size: 34px;
+  letter-spacing: -0.02em;
+  margin: 0 0 8px;
+}
+
+h2 {
+  font-size: 20px;
+  margin: 40px 0 12px;
+  color: var(--text);
+}
+
+p { color: var(--text); }
+
+.subtitle {
+  color: var(--text-secondary);
+  font-size: 17px;
+  margin-bottom: 32px;
+}
+
+.card {
+  background: var(--surface);
+  border-radius: 16px;
+  padding: 20px 24px;
+  margin: 16px 0;
+}
+
+.pill {
+  display: inline-block;
+  background: rgba(217, 119, 87, 0.15);
+  color: var(--coral);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  margin-bottom: 4px;
+}
+
+a.button {
+  display: inline-block;
+  background: var(--coral);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 14px 28px;
+  border-radius: 12px;
+  margin-top: 12px;
+}
+
+.faq dt {
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.faq dd {
+  margin: 6px 0 0;
+  color: var(--text-secondary);
+}
+
+footer.site {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+footer.site a { color: var(--text-secondary); }
+
+code {
+  background: var(--surface);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+ul { color: var(--text); padding-left: 20px; }
+li { margin-bottom: 6px; }
+
+.updated {
+  color: var(--text-secondary);
+  font-size: 13px;
+  margin-bottom: 32px;
+}

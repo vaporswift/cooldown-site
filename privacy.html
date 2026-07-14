@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Cooldown</title>
+<meta name="description" content="Cooldown's privacy policy: we do not collect, store, or transmit any of your data.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header class="site">
+    <div class="logo-mark"></div>
+    <div class="name">Cooldown</div>
+    <nav class="site">
+      <a href="index.html">Home</a>
+      <a href="privacy.html" class="active">Privacy</a>
+      <a href="support.html">Support</a>
+    </nav>
+  </header>
+
+  <h1>Privacy Policy</h1>
+  <p class="updated">Last updated: June 17, 2026</p>
+
+  <p>Cooldown is designed to be private. <strong>We do not collect, store, transmit, or have access to any of your data.</strong> There is no Cooldown account, no analytics, and no server operated by us.</p>
+
+  <h2>What Cooldown accesses, and where it stays</h2>
+  <p><strong>Your Claude usage data.</strong> Cooldown reads your usage limits (session and weekly percentages, reset times, and your plan) directly from Anthropic's services using credentials that already exist on your device:</p>
+  <ul>
+    <li>On Mac, it can read the OAuth credentials that Claude Code stores locally, or a session key you paste in yourself.</li>
+    <li>On iPhone/iPad, it uses a session key you paste in yourself.</li>
+  </ul>
+  <p>These requests go <strong>directly from your device to Anthropic</strong>. They do not pass through any server we control.</p>
+
+  <p><strong>Your credentials.</strong> A session key you enter is stored in the device Keychain. It is never transmitted anywhere except directly to Anthropic to authenticate your own usage request. We never see it.</p>
+
+  <p><strong>Local usage logs (Mac only).</strong> To show cost and per-model breakdowns, Cooldown reads the Claude Code session logs already on your Mac at <code>~/.claude/projects/</code>. This reading happens entirely on your device. The computed totals never leave your device except via your own iCloud (below).</p>
+
+  <p><strong>iCloud sync.</strong> So your iPhone widgets can show data computed on your Mac, Cooldown stores a small usage snapshot in <strong>your own iCloud key-value storage</strong> and a shared App Group container on your devices. This is your private iCloud, governed by Apple's privacy terms. We have no access to it.</p>
+
+  <h2>What we do NOT do</h2>
+  <ul>
+    <li>We do not collect personal information.</li>
+    <li>We do not use analytics, advertising, or tracking SDKs.</li>
+    <li>We do not sell or share data with anyone.</li>
+    <li>We do not operate a backend that receives your data.</li>
+  </ul>
+
+  <h2>In-App Purchases</h2>
+  <p>Cooldown Pro is sold through Apple's In-App Purchase. Apple processes the transaction; we receive no payment details. Purchase status is determined by Apple's StoreKit entitlements on your device.</p>
+
+  <h2>Third parties</h2>
+  <ul>
+    <li><strong>Anthropic</strong> — your device communicates directly with Anthropic to fetch your usage. See Anthropic's privacy policy for how they handle requests to their services.</li>
+    <li><strong>Apple</strong> — iCloud sync and In-App Purchases are handled by Apple under Apple's privacy terms.</li>
+  </ul>
+  <p>Cooldown is an independent app and is not affiliated with, endorsed by, or sponsored by Anthropic.</p>
+
+  <h2>Children</h2>
+  <p>Cooldown is not directed at children and collects no data from anyone.</p>
+
+  <h2>Changes</h2>
+  <p>If this policy changes, the "Last updated" date above will change and the new version will be posted at this URL.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about privacy: <a href="mailto:help@cooldownapp.cool" style="color: var(--coral)">help@cooldownapp.cool</a></p>
+
+  <footer class="site">
+    <p><a href="index.html">Home</a> · <a href="support.html">Support</a></p>
+  </footer>
+
+</div>
+</body>
+</html>
