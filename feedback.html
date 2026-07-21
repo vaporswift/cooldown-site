@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feedback — Cooldown</title>
+<meta name="description" content="Tell us what to build next in Cooldown, the Claude usage tracker. Bugs, feature requests, and general feedback welcome.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header class="site">
+    <div class="logo-mark"></div>
+    <div class="name">Cooldown</div>
+    <nav class="site">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="support.html">Support</a>
+      <a href="feedback.html" class="active">Feedback</a>
+    </nav>
+  </header>
+
+  <h1>Shape what's next</h1>
+  <p class="subtitle">Cooldown is built for people who live in Claude — and the roadmap is guided by what you tell us here. Found a bug? Want a feature? Just have a thought? We read every one.</p>
+
+  <!--
+    ============================ SETUP (one-time) ============================
+    This form posts to Formspree (free tier: 50 submissions/month → emailed to you).
+    To activate:
+      1. Go to https://formspree.io and sign up (free) with help@cooldownapp.cool
+      2. Create a new form; it gives you an endpoint like https://formspree.io/f/abcdwxyz
+      3. Replace YOUR_FORM_ID below with that ID (the part after /f/)
+    Until then the form will not send. Alternative backends (Tally, Google Forms)
+    can replace this whole <form> with an <iframe> embed if you prefer.
+    =========================================================================
+  -->
+  <form class="feedback" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+    <label for="type">What kind of feedback is this?</label>
+    <select id="type" name="type" required>
+      <option value="Feature request">💡 A feature I'd like</option>
+      <option value="Bug report">🐛 Something's broken</option>
+      <option value="General feedback">💬 General thoughts</option>
+      <option value="Other">Something else</option>
+    </select>
+
+    <label for="message">Tell us more</label>
+    <textarea id="message" name="message" placeholder="What's on your mind? The more specific, the better we can act on it." required></textarea>
+
+    <label for="usemost">Which part of Cooldown do you use most? <span class="opt">(optional)</span></label>
+    <select id="usemost" name="uses_most">
+      <option value="">—</option>
+      <option value="Menu bar (Mac)">The Mac menu bar</option>
+      <option value="Home/Lock screen widgets">Home &amp; Lock Screen widgets</option>
+      <option value="Reset alerts">Reset / back-to-work alerts</option>
+      <option value="Dynamic Island">The Dynamic Island countdown</option>
+      <option value="Cost analytics">Cost analytics</option>
+      <option value="All of it">Honestly, all of it</option>
+    </select>
+
+    <label for="device">Device &amp; OS version <span class="opt">(optional — helps with bugs)</span></label>
+    <input type="text" id="device" name="device" placeholder="e.g. iPhone 16 Pro, iOS 26.1">
+
+    <label for="email">Your email <span class="opt">(optional — only if you'd like a reply)</span></label>
+    <input type="email" id="email" name="email" placeholder="you@example.com">
+
+    <!-- Formspree niceties: subject line + honeypot spam trap -->
+    <input type="hidden" name="_subject" value="Cooldown feedback">
+    <input type="text" name="_gotcha" style="display:none">
+
+    <button type="submit">Send feedback</button>
+  </form>
+
+  <p class="form-note">Prefer email? Write us directly at <a href="mailto:help@cooldownapp.cool" style="color: var(--coral)">help@cooldownapp.cool</a>. We don't collect any usage data from the app — this form is the only way we hear from you, so don't be shy.</p>
+
+  <footer class="site">
+    <p><a href="index.html">Home</a> · <a href="privacy.html">Privacy</a> · <a href="support.html">Support</a></p>
+  </footer>
+
+</div>
+</body>
+</html>
