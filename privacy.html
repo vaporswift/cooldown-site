@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy — Cooldown</title>
-<meta name="description" content="Cooldown's privacy policy: we do not collect, store, or transmit any of your data.">
+<meta name="description" content="Cooldown's privacy policy: no account, no credentials, and no data collected. Your figures stay on your devices and in your own iCloud.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,47 +22,48 @@
   </header>
 
   <h1>Privacy Policy</h1>
-  <p class="updated">Last updated: June 17, 2026</p>
+  <p class="updated">Last updated: October 23, 2026</p>
 
-  <p>Cooldown is designed to be private. <strong>We do not collect, store, transmit, or have access to any of your data.</strong> There is no Cooldown account, no analytics, and no server operated by us.</p>
+  <p>Cooldown is designed to be private. <strong>We do not collect, receive, or have access to any of your data.</strong> There is no Cooldown account, no analytics, and no server operated by us.</p>
 
-  <h2>What Cooldown accesses, and where it stays</h2>
-  <p><strong>Your Claude usage data.</strong> Cooldown reads your usage limits (session and weekly percentages, reset times, and your plan) directly from Anthropic's services using credentials that already exist on your device:</p>
+  <h2>What Cooldown reads, and where it stays</h2>
+  <p><strong>Claude Code's files on your Mac.</strong> Cooldown for Mac reads two kinds of files from the Claude Code folder you choose (usually <code>~/.claude</code>), read-only:</p>
   <ul>
-    <li>On Mac, it can read the OAuth credentials that Claude Code stores locally, or a session key you paste in yourself.</li>
-    <li>On iPhone/iPad, it uses a session key you paste in yourself.</li>
+    <li>Claude Code's session logs, to count tokens and estimate cost by model, project, and task.</li>
+    <li>A small status file that your own Claude Code status line writes once you add the line Cooldown shows you. It contains your plan usage percentages and reset times, as Claude Code reports them.</li>
   </ul>
-  <p>These requests go <strong>directly from your device to Anthropic</strong>. They do not pass through any server we control.</p>
+  <p>Cooldown can only read the folder you pick. You can disconnect it at any time in Settings, and revoke access entirely by deleting the app.</p>
 
-  <p><strong>Your credentials.</strong> A session key you enter is stored in the device Keychain. It is never transmitted anywhere except directly to Anthropic to authenticate your own usage request. We never see it.</p>
+  <p><strong>No credentials.</strong> Cooldown never asks for, reads, or stores passwords, session keys, or sign-in tokens for Claude, Anthropic, or anything else, and it never contacts Anthropic.</p>
 
-  <p><strong>Local usage logs (Mac only).</strong> To show cost and per-model breakdowns, Cooldown reads the Claude Code session logs already on your Mac at <code>~/.claude/projects/</code>. This reading happens entirely on your device. The computed totals never leave your device except via your own iCloud (below).</p>
+  <p><strong>iCloud sync.</strong> So your iPhone and widgets can show figures computed on your Mac, Cooldown for Mac saves a small summary (usage percentages, reset times, token and cost totals, recent session and project names) in <strong>your own iCloud key-value storage</strong>, and a copy in an App Group container on each device. This is your private iCloud, governed by Apple's privacy terms. We have no access to it. Turning off iCloud for Cooldown stops the sync.</p>
 
-  <p><strong>iCloud sync.</strong> So your iPhone widgets can show data computed on your Mac, Cooldown stores a small usage snapshot in <strong>your own iCloud key-value storage</strong> and a shared App Group container on your devices. This is your private iCloud, governed by Apple's privacy terms. We have no access to it.</p>
+  <p><strong>Settings</strong> such as alert thresholds stay on each device.</p>
 
-  <h2>What we do NOT do</h2>
+  <h2>Network access</h2>
   <ul>
-    <li>We do not collect personal information.</li>
-    <li>We do not use analytics, advertising, or tracking SDKs.</li>
-    <li>We do not sell or share data with anyone.</li>
-    <li>We do not operate a backend that receives your data.</li>
+    <li><strong>Apple</strong> — in-app purchases and iCloud.</li>
+    <li><strong>GitHub</strong> — about once a week Cooldown for Mac downloads a public list of model prices, so cost estimates stay current. Nothing about you is sent beyond the ordinary request itself.</li>
   </ul>
+  <p>That's all. There are no analytics, advertising, or tracking SDKs.</p>
 
   <h2>In-App Purchases</h2>
-  <p>Cooldown Pro is sold through Apple's In-App Purchase. Apple processes the transaction; we receive no payment details. Purchase status is determined by Apple's StoreKit entitlements on your device.</p>
+  <p>Cooldown Pro is sold through Apple's In-App Purchase. Apple processes the payment; we receive no payment details. Whether you own Pro is determined by Apple's StoreKit on your device.</p>
 
-  <h2>Third parties</h2>
-  <ul>
-    <li><strong>Anthropic</strong> — your device communicates directly with Anthropic to fetch your usage. See Anthropic's privacy policy for how they handle requests to their services.</li>
-    <li><strong>Apple</strong> — iCloud sync and In-App Purchases are handled by Apple under Apple's privacy terms.</li>
-  </ul>
-  <p>Cooldown is an independent app and is not affiliated with, endorsed by, or sponsored by Anthropic.</p>
+  <h2>Notifications</h2>
+  <p>If you allow them, limit and "back to work" alerts are scheduled locally on your device. They are not sent through any server.</p>
+
+  <h2>Data retention and deletion</h2>
+  <p>We hold no data, so there is nothing for us to delete. To remove Cooldown's data from your devices, delete the app on each device. The iCloud summary is removed when you delete Cooldown's data in Settings → [your name] → iCloud → Manage Account Storage, or turn off iCloud for the app.</p>
 
   <h2>Children</h2>
   <p>Cooldown is not directed at children and collects no data from anyone.</p>
 
   <h2>Changes</h2>
   <p>If this policy changes, the "Last updated" date above will change and the new version will be posted at this URL.</p>
+
+  <h2>Affiliation</h2>
+  <p>Cooldown is an independent app and is not affiliated with, endorsed by, or sponsored by Anthropic. "Claude" and "Claude Code" are trademarks of Anthropic.</p>
 
   <h2>Contact</h2>
   <p>Questions about privacy: <a href="mailto:help@cooldownapp.cool" style="color: var(--coral)">help@cooldownapp.cool</a></p>
