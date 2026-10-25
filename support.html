@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Support — Cooldown</title>
-<meta name="description" content="Getting started, FAQs, and contact for Cooldown, the Claude usage tracker.">
+<meta name="description" content="Setup, FAQs, and contact for Cooldown, the usage meter for Claude Code plans.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,56 +22,76 @@
   </header>
 
   <h1>Support</h1>
-  <p class="subtitle">Cooldown shows how much of your Claude usage you have left — session and weekly limits, reset times, and (with Pro) your spending — in your Mac menu bar, on your iPhone home screen, and in the Dynamic Island.</p>
+  <p class="subtitle">Cooldown shows how much of your Claude Code plan you have left: session and weekly limits, reset times, and (with Pro) your spending, in your Mac menu bar, on your iPhone Home Screen, and in the Dynamic Island.</p>
 
   <p><strong>Contact:</strong> <a href="mailto:help@cooldownapp.cool" style="color: var(--coral)">help@cooldownapp.cool</a> — we usually reply within a couple of days.</p>
 
   <h2>Getting started</h2>
 
   <div class="card">
-    <strong>On iPhone / iPad</strong>
-    <ol>
-      <li>Open Cooldown. You'll see a short onboarding screen.</li>
-      <li>Get your Claude session key:
-        <ul>
-          <li>On a computer, sign in at <strong>claude.ai</strong> in your browser.</li>
-          <li>Open the browser's developer tools → <strong>Application</strong> (or <strong>Storage</strong>) → <strong>Cookies</strong> → <code>claude.ai</code>.</li>
-          <li>Copy the value of the <strong>sessionKey</strong> cookie.</li>
-        </ul>
-      </li>
-      <li>Paste it into Cooldown and tap <strong>Connect</strong>.</li>
-      <li>Add widgets: long-press your home screen → <strong>+</strong> → search <strong>Cooldown</strong> → pick a size.</li>
-    </ol>
-    <p style="color: var(--text-secondary); font-size: 14px;">Your session key is stored only in your device's Keychain and is sent only to Anthropic to read your own usage. We never see it.</p>
+    <strong>What you need</strong>
+    <ul>
+      <li>A Mac with macOS 14 or later and Claude Code installed. Cooldown reads the usage Claude Code records there.</li>
+      <li>A Claude Pro or Max plan for the session and weekly limit percentages. Tokens and cost work without them.</li>
+      <li>For iPhone and iPad: iOS 17 or later, signed in to the same iCloud account as your Mac.</li>
+    </ul>
+    <p style="color: var(--text-secondary); font-size: 14px;">No sign-in, keys, or passwords are involved at any step.</p>
   </div>
 
   <div class="card">
     <strong>On Mac</strong>
-    <p>If you use <strong>Claude Code</strong>, Cooldown signs in automatically — no setup. Otherwise, click the <strong>🔑</strong> button in the menu bar popover and paste your session key (same steps as above).</p>
+    <ol>
+      <li>Open Cooldown. The <strong>Connect Claude Code</strong> window opens. (To reopen it later: menu bar popover → gear → <strong>Claude Code</strong> → <strong>Set Up…</strong>)</li>
+      <li>Click <strong>Choose Folder…</strong>, make sure the <code>.claude</code> folder in your home folder is selected, and click <strong>Allow</strong>. Cooldown can only read this folder.</li>
+      <li>Click <strong>Copy</strong>, then paste the entry into <code>settings.json</code> in that folder. <strong>Show settings.json</strong> finds the file for you. If you already have a status line, replace your <code>"statusLine"</code> entry with the copied one; your status line keeps showing exactly what it does now. Cooldown never edits this file itself.</li>
+      <li>Start a new Claude Code session in a terminal and send a message. When the third step shows a checkmark, your limits are in the menu bar.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <strong>On iPhone / iPad</strong>
+    <ol>
+      <li>Open Cooldown and tap <strong>Continue</strong>.</li>
+      <li>Once your Mac is set up, figures arrive through iCloud. The dashboard shows when they were last reported.</li>
+      <li>Add widgets: long-press your Home Screen → <strong>Edit</strong> → <strong>Add Widget</strong> → search <strong>Cooldown</strong> → pick a size.</li>
+    </ol>
+    <p style="color: var(--text-secondary); font-size: 14px;">Want to look around first? Choose <strong>Explore with sample data</strong> on the first screen, or from the <strong>•••</strong> menu. The Mac app has the same option. Sample data stays on that device.</p>
   </div>
 
   <h2>Frequently asked questions</h2>
   <dl class="faq">
-    <dt>Why do I need to paste a session key?</dt>
-    <dd>It's how Cooldown reads your own usage from your Claude account. There's no Cooldown account and no server — the request goes straight from your device to Anthropic.</dd>
+    <dt>Do I need to sign in or paste a key?</dt>
+    <dd>No. Cooldown never asks for passwords, session keys, or sign-in tokens, and it never contacts Anthropic. It reads files Claude Code already writes on your Mac, from the folder you choose.</dd>
 
-    <dt>The numbers don't exactly match claude.ai. Why?</dt>
-    <dd>Both read the same source; small differences are just timing — usage changes minute to minute, and each view was last refreshed at a slightly different moment. Pull to refresh and they'll line up within a point or two.</dd>
+    <dt>What does the status line entry do?</dt>
+    <dd>Claude Code passes your plan limits to its status line command each time it updates. The entry Cooldown gives you saves a copy to <code>cooldown-status.json</code> in your Claude folder. Without an existing status line, it shows nothing in your terminal; with one, your status line looks exactly as before. To remove it, delete the entry from <code>settings.json</code>, or put back your previous status line command.</dd>
 
-    <dt>My session key stopped working.</dt>
-    <dd>Session keys expire periodically. Just grab a fresh one (steps above) and paste it again. On Mac, if you use Claude Code, Cooldown keeps working automatically without a key.</dd>
+    <dt>My limits show "—" or "Waiting for Claude Code".</dt>
+    <dd>Limits arrive with Claude Code's next reply in a terminal session, where status lines run. If a session was already open when you added the entry, start a new one. Claude Code reports plan limits for Pro and Max plans, after the first reply in a session. You can check the connection in the Mac app's Settings under <strong>Claude Code</strong>.</dd>
 
-    <dt>The widget shows old data or "—".</dt>
-    <dd>Widgets refresh on Apple's schedule (about every 5 minutes), and iCloud sync from your Mac can lag. Open the app to force a refresh, and make sure you're signed into the same iCloud account on both devices.</dd>
+    <dt>My limits didn't change while I used Claude somewhere else.</dt>
+    <dd>Status lines only run in terminal sessions. Usage in other apps, including claude.ai, still counts toward your plan, and shows up the next time Claude Code reports your limits from a terminal. Tokens and cost come from Claude Code's session logs and update either way.</dd>
+
+    <dt>Why doesn't a number match what I see elsewhere?</dt>
+    <dd>Cooldown shows exactly what Claude Code last reported, with the time it reported it ("Limits as of…"). If you've used Claude since, the next terminal reply brings it up to date. Once a reset time passes, Cooldown shows that limit as reset.</dd>
+
+    <dt>The widget or iPhone shows old data or "—".</dt>
+    <dd>Your iPhone gets figures from your Mac through iCloud, so Cooldown needs to be running on an awake Mac, and both devices need the same iCloud account. iCloud can take a few minutes to deliver an update, and widgets refresh on Apple's schedule. Opening the app checks for new figures.</dd>
+
+    <dt>Are the costs exact?</dt>
+    <dd>They're estimates at public list prices for each model, from a price list Cooldown downloads about once a week. On a subscription plan you aren't billed per token; the figure shows what that usage would cost at API rates.</dd>
 
     <dt>Does Cooldown collect my data?</dt>
-    <dd>No. Cooldown has no analytics, no tracking, and no backend. Everything stays on your device and in your own iCloud. See our <a href="privacy.html" style="color: var(--coral)">Privacy Policy</a>.</dd>
+    <dd>No. Cooldown has no analytics, no tracking, and no backend. Everything stays on your devices and in your own iCloud. See our <a href="privacy.html" style="color: var(--coral)">Privacy Policy</a>.</dd>
 
     <dt>What's in Cooldown Pro?</dt>
-    <dd>A one-time purchase unlocks: "back to work" alerts the moment a maxed-out limit resets, the Dynamic Island reset countdown, and full cost analytics (daily and all-time spend, by model). Core limit tracking is always free. Restore a previous purchase from the Pro screen.</dd>
+    <dd>A one-time purchase unlocks "back to work" alerts the moment a maxed-out limit resets, the Dynamic Island reset countdown, and full cost analytics (daily and all-time spend, by model). It unlocks Cooldown on iPhone, iPad, and Mac with the same Apple Account. Core limit tracking is always free. To restore a previous purchase, tap <strong>Restore Purchase</strong> on the Pro screen.</dd>
+
+    <dt>How do I disconnect or remove Cooldown?</dt>
+    <dd>On Mac, open Settings (the gear in the menu bar popover) and choose <strong>Disconnect folder</strong>, then remove the status line entry from <code>settings.json</code>. Deleting the app removes its data from that device. The iCloud summary can be removed in Settings → [your name] → iCloud → Manage Account Storage.</dd>
 
     <dt>Is Cooldown made by Anthropic?</dt>
-    <dd>No. Cooldown is an independent app and is not affiliated with, endorsed by, or sponsored by Anthropic. "Claude" is a trademark of Anthropic, used here only to describe compatibility.</dd>
+    <dd>No. Cooldown is an independent app and is not affiliated with, endorsed by, or sponsored by Anthropic. "Claude" and "Claude Code" are trademarks of Anthropic, used here only to describe compatibility.</dd>
   </dl>
 
   <h2>Still stuck?</h2>

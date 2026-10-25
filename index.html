@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cooldown — Usage Tracker for Claude</title>
-<meta name="description" content="Know exactly how much of your Claude usage you have left — session limits, weekly limits, cost, and reset alerts, right in your menu bar, home screen, and Dynamic Island.">
+<title>Cooldown — AI Usage Meter</title>
+<meta name="description" content="See how much of your Claude Code plan is left: session and weekly limits, reset countdowns, and cost, in your Mac menu bar, on your Home Screen, and in the Dynamic Island.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,37 +22,48 @@
   </header>
 
   <h1>Know the second you're back to work.</h1>
-  <p class="subtitle">Cooldown shows how much of your Claude usage you have left — at a glance, everywhere you work.</p>
+  <p class="subtitle">Cooldown shows how much of your Claude Code plan you have left, and when it resets: in your Mac menu bar, on your iPhone Home Screen, and in the Dynamic Island.</p>
 
-  <a class="button" href="https://apps.apple.com/">Get Cooldown on the App Store</a>
+  <a class="button" href="https://apps.apple.com/app/id6789733353">Get Cooldown on the App Store</a>
+  <p style="color: var(--text-secondary); font-size: 14px;">For Mac, iPhone, and iPad. Free, with an optional one-time Pro upgrade that unlocks all three.</p>
 
   <h2>What it does</h2>
   <div class="card">
     <span class="pill">FREE</span>
     <ul>
-      <li>Live session (5-hour) and weekly limit percentages</li>
-      <li>Exact reset countdowns</li>
-      <li>"Sonnet only" weekly breakdown, matching Claude's own usage panel</li>
-      <li>Your plan at a glance (Pro, Max, Team)</li>
-      <li>Home screen, Lock Screen, and macOS desktop widgets</li>
-      <li>Menu bar app for Mac — zero setup if you use Claude Code</li>
+      <li>Session (5-hour) and weekly limit percentages, as reported by Claude Code</li>
+      <li>Reset countdowns, with "as of" times so you always know how fresh a figure is</li>
+      <li>Tokens by model and recent sessions, from Claude Code's local logs</li>
+      <li>Deep Dive: usage by model, effort, project, tool, and subagent task</li>
+      <li>Home Screen, Lock Screen, and Mac desktop widgets</li>
+      <li>Mac menu bar app with both numbers always visible</li>
     </ul>
   </div>
 
   <div class="card">
     <span class="pill">COOLDOWN PRO</span>
     <ul>
-      <li>"Back to work" alerts the instant a maxed-out limit resets</li>
-      <li>Dynamic Island countdown — a live timer to your reset</li>
-      <li>Full cost analytics — daily and all-time spend, by model</li>
+      <li>"Back to work" alerts the moment a maxed-out limit resets, even with the app closed</li>
+      <li>Dynamic Island countdown to your reset</li>
+      <li>Cost analytics: daily and all-time spend at list prices, by model</li>
     </ul>
   </div>
 
+  <h2>How it works</h2>
+  <div class="card">
+    <ol>
+      <li><strong>Choose your Claude Code folder.</strong> Cooldown for Mac asks once for the folder Claude Code keeps on your Mac (usually <code>~/.claude</code>) and can only read that folder.</li>
+      <li><strong>Add one line to your Claude Code settings.</strong> Claude Code passes your plan limits to its status line. Cooldown shows you the exact entry to paste, with a Copy button. If you already have a status line, it keeps working as before.</li>
+      <li><strong>Use Claude Code as usual.</strong> Your limits appear in the menu bar, and reach your iPhone through your own iCloud.</li>
+    </ol>
+    <p style="color: var(--text-secondary); font-size: 14px;">Limits update while you use Claude Code in a terminal, and are reported for Pro and Max plans. Costs are estimates at list prices. No Claude Code yet? Both apps include sample data, so you can try every feature first.</p>
+  </div>
+
   <h2>Private by design</h2>
-  <p>Cooldown collects nothing. There's no account, no analytics, and no server — your usage data and credentials stay on your device and in your own iCloud. See the <a href="privacy.html" style="color: var(--coral)">Privacy Policy</a> for details.</p>
+  <p>Cooldown collects nothing. There's no account, no sign-in, no passwords or keys, no analytics, and no server of ours, and it never contacts Anthropic. Your figures stay on your devices and in your own iCloud. See the <a href="privacy.html" style="color: var(--coral)">Privacy Policy</a> for details.</p>
 
   <footer class="site">
-    <p>Cooldown is an independent app and is not affiliated with, endorsed by, or sponsored by Anthropic. "Claude" is a trademark of Anthropic, used here only to describe compatibility.</p>
+    <p>Cooldown is an independent app and is not affiliated with, endorsed by, or sponsored by Anthropic. "Claude" and "Claude Code" are trademarks of Anthropic, used here only to describe compatibility.</p>
     <p><a href="privacy.html">Privacy Policy</a> · <a href="support.html">Support</a> · <a href="mailto:help@cooldownapp.cool">help@cooldownapp.cool</a></p>
   </footer>
 
